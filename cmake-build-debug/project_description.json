@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "ws2812-test",
-    "project_version":    "8fae3a2-dirty",
+    "project_version":    "5a7f6be-dirty",
     "project_path":       "D:/esp-code/ws2812-test",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "D:/esp-code/ws2812-test/cmake-build-debug",
