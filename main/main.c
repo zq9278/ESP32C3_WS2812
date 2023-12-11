@@ -173,6 +173,7 @@ void app_main(void)
     bool led_on_off = true;  // LED开关状态
 
     ESP_LOGI(TAG, "开始闪烁LED灯带");
+    //单色常亮
 //    while (1) {  // 无限循环
 //        if (led_on_off) {
 //            /* 使用RGB从0（0%）到255（100%）设置LED像素 */
@@ -193,22 +194,40 @@ void app_main(void)
 //        vTaskDelay(pdMS_TO_TICKS(500)); // 延时500毫秒
 //    }
 
-    while (1) {
-        if (led_on_off) {
-            // 开启所有LED
-            for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
-                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255)); // 设置为蓝色
-            }
-            ESP_ERROR_CHECK(led_strip_refresh(led_strip));
-            ESP_LOGI(TAG, "LED开！");
-        } else {
-            // 关闭所有LED
-            ESP_ERROR_CHECK(led_strip_clear(led_strip));
-            ESP_LOGI(TAG, "LED关！");
-        }
+//单色爆闪
+//    while (1) {
+//        if (led_on_off) {
+//            // 开启所有LED
+//            for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
+//                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255)); // 设置为蓝色
+//            }
+//            ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+//            ESP_LOGI(TAG, "LED开！");
+//        } else {
+//            // 关闭所有LED
+//            ESP_ERROR_CHECK(led_strip_clear(led_strip));
+//            ESP_LOGI(TAG, "LED关！");
+//        }
+//
+//        led_on_off = !led_on_off; // 切换LED灯的状态
+//        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时缩短为100毫秒
+//    }
 
-        led_on_off = !led_on_off; // 切换LED灯的状态
-        vTaskDelay(pdMS_TO_TICKS(100)); // 爆闪模式下的延时缩短为100毫秒
+//多色爆闪
+    while (1) {
+        // 为每个LED设置随机颜色
+        for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
+            uint8_t red = rand() % 256;   // 随机生成红色分量
+            uint8_t green = rand() % 256; // 随机生成绿色分量
+            uint8_t blue = rand() % 256;  // 随机生成蓝色分量
+            ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, red, green, blue));
+        }
+        ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 刷新灯带以发送数据
+        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时100毫秒
+
+        // 设置所有LED为关闭状态，以清除所有像素
+        ESP_ERROR_CHECK(led_strip_clear(led_strip));
+        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时100毫秒
     }
 
 }
