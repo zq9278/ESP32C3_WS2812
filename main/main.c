@@ -173,24 +173,42 @@ void app_main(void)
     bool led_on_off = true;  // LED开关状态
 
     ESP_LOGI(TAG, "开始闪烁LED灯带");
-    while (1) {  // 无限循环
+//    while (1) {  // 无限循环
+//        if (led_on_off) {
+//            /* 使用RGB从0（0%）到255（100%）设置LED像素 */
+//            for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
+//                // 为每个LED设置颜色，这里设置为（0, 150, 255），代表蓝色调的颜色
+//                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255));
+//            }
+//            /* 刷新灯带以发送数据 */
+//            ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 将设置的颜色数据发送到LED灯带
+//            ESP_LOGI(TAG, "LED开！"); // 记录日志，表示LED灯开启
+//        } else {
+//            /* 设置所有LED为关闭状态，以清除所有像素 */
+//            ESP_ERROR_CHECK(led_strip_clear(led_strip)); // 清除LED灯带上的所有像素（关闭LED灯）
+//            ESP_LOGI(TAG, "LED关！"); // 记录日志，表示LED灯关闭
+//        }
+//
+//        //led_on_off = !led_on_off; // 切换LED灯的状态，如果取消这行注释，LED灯将交替开关
+//        vTaskDelay(pdMS_TO_TICKS(500)); // 延时500毫秒
+//    }
+
+    while (1) {
         if (led_on_off) {
-            /* 使用RGB从0（0%）到255（100%）设置LED像素 */
+            // 开启所有LED
             for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
-                // 为每个LED设置颜色，这里设置为（0, 150, 255），代表蓝色调的颜色
-                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255));
+                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255)); // 设置为蓝色
             }
-            /* 刷新灯带以发送数据 */
-            ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 将设置的颜色数据发送到LED灯带
-            ESP_LOGI(TAG, "LED开！"); // 记录日志，表示LED灯开启
+            ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+            ESP_LOGI(TAG, "LED开！");
         } else {
-            /* 设置所有LED为关闭状态，以清除所有像素 */
-            ESP_ERROR_CHECK(led_strip_clear(led_strip)); // 清除LED灯带上的所有像素（关闭LED灯）
-            ESP_LOGI(TAG, "LED关！"); // 记录日志，表示LED灯关闭
+            // 关闭所有LED
+            ESP_ERROR_CHECK(led_strip_clear(led_strip));
+            ESP_LOGI(TAG, "LED关！");
         }
 
-        //led_on_off = !led_on_off; // 切换LED灯的状态，如果取消这行注释，LED灯将交替开关
-        vTaskDelay(pdMS_TO_TICKS(500)); // 延时500毫秒
+        led_on_off = !led_on_off; // 切换LED灯的状态
+        vTaskDelay(pdMS_TO_TICKS(100)); // 爆闪模式下的延时缩短为100毫秒
     }
 
 }
