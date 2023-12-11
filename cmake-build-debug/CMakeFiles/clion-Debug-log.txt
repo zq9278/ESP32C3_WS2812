@@ -1,23 +1,6 @@
 "C:\Program Files\JetBrains\CLion 2023.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\esp-code\ws2812-test -B D:\esp-code\ws2812-test\cmake-build-debug
--- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
 -- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
 fatal: not a git repository (or any of the parent directories): .git
--- The C compiler identification is GNU 12.2.0
--- The CXX compiler identification is GNU 12.2.0
--- The ASM compiler identification is GNU
--- Found assembler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-g++.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
--- Could not use 'git describe' to determine PROJECT_VER.
 -- Building ESP-IDF components for target esp32c3
 -- Checking Python dependencies...
 Python requirements are satisfied.
@@ -25,53 +8,25 @@ Constraint file: C:\Espressif\espidf.constraints.v5.1.txt
 Requirement files:
  - C:\Espressif\frameworks\esp-idf-v5.1.2\tools\requirements\requirements.core.txt
 Python being checked: C:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe
-Dependencies lock doesn't exist, solving dependencies.
-Updating lock file at D:\esp-code\ws2812-test\dependencies.lock
+Manifest files have changed, solving dependencies.
+.Updating lock file at D:\esp-code\ws2812-test\dependencies.lock
 Processing 1 dependencies:
 [1/1] idf (5.1.2)
--- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
-CMake Error at C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/component.cmake:224 (message):
-  CMake Warning (dev) at build_properties.temp.cmake:8:
-
-    Syntax Warning in cmake code at column 47
-
-  
-
-    Argument not separated from preceding token by whitespace.
-
-  Call Stack (most recent call first):
-
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
-
-  This warning is for project developers.  Use -Wno-dev to suppress it.
-
-
-
-  fatal: not a git repository (or any of the parent directories): .git
-
-  CMake Error at C:/Program Files/JetBrains/CLion
-  2023.3/bin/cmake/win/x64/share/cmake-3.27/Modules/ExternalProject.cmake:1297
-  (define_property):
-
-    define_property command is not scriptable
-
-  Call Stack (most recent call first):
-
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/kconfig.cmake:1 (include)
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/idf.cmake:43 (include)
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/project.cmake:29 (include)
-    D:/esp-code/ws2812-test/components/espressif_led_strip/CMakeLists.txt:7 (include)
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:106 (include)
-    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:124 (__component_get_requirements)
-
-  
-
-
-
-Call Stack (most recent call first):
-  C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/build.cmake:574 (__component_get_requirements)
-  C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/project.cmake:547 (idf_build_process)
-  CMakeLists.txt:9 (project)
-
-
--- Configuring incomplete, errors occurred!
+-- Project sdkconfig file D:/esp-code/ws2812-test/sdkconfig
+-- App "ws2812-test" version: b4cd4a3-dirty
+-- Adding linker script D:/esp-code/ws2812-test/cmake-build-debug/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/ld/esp32c3/sections.ld.in
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.api.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.libgcc.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.newlib.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.version.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32c3/ld/esp32c3.rom.eco3.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.2/components/soc/esp32c3/ld/esp32c3.peripherals.ld
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository: C:/Espressif/frameworks/esp-idf-v5.1.2/components/openthread/openthread/../../../.git/modules/components/openthread/openthread
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__led_strip esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table protobuf-c protocomm pthread riscv sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant
+-- Component paths: C:/Espressif/frameworks/esp-idf-v5.1.2/components/app_trace C:/Espressif/frameworks/esp-idf-v5.1.2/components/app_update C:/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader C:/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support C:/Espressif/frameworks/esp-idf-v5.1.2/components/bt C:/Espressif/frameworks/esp-idf-v5.1.2/components/cmock C:/Espressif/frameworks/esp-idf-v5.1.2/components/console C:/Espressif/frameworks/esp-idf-v5.1.2/components/cxx C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver C:/Espressif/frameworks/esp-idf-v5.1.2/components/efuse C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp-tls C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_adc C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_app_format C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_coex C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_common C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_eth C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_gdbstub C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hid C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_client C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_server C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_ota C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_server C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_lcd C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_local_ctrl C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_mm C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif_stack C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_partition C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_phy C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_pm C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_psram C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_ringbuf C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_timer C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_wifi C:/Espressif/frameworks/esp-idf-v5.1.2/components/espcoredump D:/esp-code/ws2812-test/components/espressif__led_strip C:/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py C:/Espressif/frameworks/esp-idf-v5.1.2/components/fatfs C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal C:/Espressif/frameworks/esp-idf-v5.1.2/components/heap C:/Espressif/frameworks/esp-idf-v5.1.2/components/http_parser C:/Espressif/frameworks/esp-idf-v5.1.2/components/idf_test C:/Espressif/frameworks/esp-idf-v5.1.2/components/ieee802154 C:/Espressif/frameworks/esp-idf-v5.1.2/components/json C:/Espressif/frameworks/esp-idf-v5.1.2/components/log C:/Espressif/frameworks/esp-idf-v5.1.2/components/lwip D:/esp-code/ws2812-test/main C:/Espressif/frameworks/esp-idf-v5.1.2/components/mbedtls C:/Espressif/frameworks/esp-idf-v5.1.2/components/mqtt C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib C:/Espressif/frameworks/esp-idf-v5.1.2/components/nvs_flash C:/Espressif/frameworks/esp-idf-v5.1.2/components/openthread C:/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table C:/Espressif/frameworks/esp-idf-v5.1.2/components/protobuf-c C:/Espressif/frameworks/esp-idf-v5.1.2/components/protocomm C:/Espressif/frameworks/esp-idf-v5.1.2/components/pthread C:/Espressif/frameworks/esp-idf-v5.1.2/components/riscv C:/Espressif/frameworks/esp-idf-v5.1.2/components/sdmmc C:/Espressif/frameworks/esp-idf-v5.1.2/components/soc C:/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash C:/Espressif/frameworks/esp-idf-v5.1.2/components/spiffs C:/Espressif/frameworks/esp-idf-v5.1.2/components/tcp_transport C:/Espressif/frameworks/esp-idf-v5.1.2/components/ulp C:/Espressif/frameworks/esp-idf-v5.1.2/components/unity C:/Espressif/frameworks/esp-idf-v5.1.2/components/usb C:/Espressif/frameworks/esp-idf-v5.1.2/components/vfs C:/Espressif/frameworks/esp-idf-v5.1.2/components/wear_levelling C:/Espressif/frameworks/esp-idf-v5.1.2/components/wifi_provisioning C:/Espressif/frameworks/esp-idf-v5.1.2/components/wpa_supplicant
+-- Configuring done (3.2s)
+-- Generating done (0.7s)
+-- Build files have been written to: D:/esp-code/ws2812-test/cmake-build-debug
