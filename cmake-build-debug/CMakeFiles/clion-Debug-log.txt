@@ -1,0 +1,77 @@
+"C:\Program Files\JetBrains\CLion 2023.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\esp-code\ws2812-test -B D:\esp-code\ws2812-test\cmake-build-debug
+-- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+fatal: not a git repository (or any of the parent directories): .git
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32c3
+-- Checking Python dependencies...
+Python requirements are satisfied.
+Constraint file: C:\Espressif\espidf.constraints.v5.1.txt
+Requirement files:
+ - C:\Espressif\frameworks\esp-idf-v5.1.2\tools\requirements\requirements.core.txt
+Python being checked: C:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe
+Dependencies lock doesn't exist, solving dependencies.
+Updating lock file at D:\esp-code\ws2812-test\dependencies.lock
+Processing 1 dependencies:
+[1/1] idf (5.1.2)
+-- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+CMake Error at C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/component.cmake:224 (message):
+  CMake Warning (dev) at build_properties.temp.cmake:8:
+
+    Syntax Warning in cmake code at column 47
+
+  
+
+    Argument not separated from preceding token by whitespace.
+
+  Call Stack (most recent call first):
+
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
+
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+
+  fatal: not a git repository (or any of the parent directories): .git
+
+  CMake Error at C:/Program Files/JetBrains/CLion
+  2023.3/bin/cmake/win/x64/share/cmake-3.27/Modules/ExternalProject.cmake:1297
+  (define_property):
+
+    define_property command is not scriptable
+
+  Call Stack (most recent call first):
+
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/kconfig.cmake:1 (include)
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/idf.cmake:43 (include)
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/project.cmake:29 (include)
+    D:/esp-code/ws2812-test/components/espressif_led_strip/CMakeLists.txt:7 (include)
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:106 (include)
+    C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/scripts/component_get_requirements.cmake:124 (__component_get_requirements)
+
+  
+
+
+
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/build.cmake:574 (__component_get_requirements)
+  C:/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/project.cmake:547 (idf_build_process)
+  CMakeLists.txt:9 (project)
+
+
+-- Configuring incomplete, errors occurred!
