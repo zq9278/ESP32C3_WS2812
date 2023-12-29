@@ -92,6 +92,8 @@ void app_main(void)
    }
 
 //多色爆闪
+//多色爆闪
+//多色爆闪
 //    while (1) {
 //        // 为每个LED设置随机颜色
 //        for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
@@ -107,5 +109,4 @@ void app_main(void)
 //        ESP_ERROR_CHECK(led_strip_clear(led_strip));
 //        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时100毫秒
 //    }
-
 }
