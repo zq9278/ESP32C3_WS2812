@@ -93,7 +93,6 @@ void app_main(void)
 
 //多色爆闪
 //多色爆闪
-//多色爆闪
 //    while (1) {
 //        // 为每个LED设置随机颜色
 //        for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
