@@ -8,9 +8,9 @@
 #include "esp_err.h"            // 引入ESP错误处理的头文件
 
 // GPIO分配
-#define LED_STRIP_BLINK_GPIO  1   // LED灯带连接的GPIO编号
+#define LED_STRIP_BLINK_GPIO  7   // LED灯带连接的GPIO编号
 // LED灯带中的LED数量
-#define LED_STRIP_LED_NUMBERS 94   // LED灯带中LED的数量
+#define LED_STRIP_LED_NUMBERS 1   // LED灯带中LED的数量
 // 10MHz的分辨率，1 tick = 0.1微秒（LED灯带需要高分辨率）
 #define LED_STRIP_RMT_RES_HZ  (5 * 1000 * 1000) // LED灯带的RMT解析度
 
@@ -51,45 +51,45 @@ void app_main(void)
     bool led_on_off = true;  // LED开关状态
 
     ESP_LOGI(TAG, "开始闪烁LED灯带");
-    //单色常亮
-    while (1) {  // 无限循环
-        if (led_on_off) {
-            /* 使用RGB从0（0%）到255（100%）设置LED像素 */
-            for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
-                // 为每个LED设置颜色，这里设置为（0, 150, 255），代表蓝色调的颜色
-                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255));
-            }
-            /* 刷新灯带以发送数据 */
-            ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 将设置的颜色数据发送到LED灯带
-            ESP_LOGI(TAG, "LED开！"); // 记录日志，表示LED灯开启
-        } else {
-            /* 设置所有LED为关闭状态，以清除所有像素 */
-            ESP_ERROR_CHECK(led_strip_clear(led_strip)); // 清除LED灯带上的所有像素（关闭LED灯）
-            ESP_LOGI(TAG, "LED关！"); // 记录日志，表示LED灯关闭
-        }
+    // //单色常亮
+    // while (1) {  // 无限循环
+    //     if (led_on_off) {
+    //         /* 使用RGB从0（0%）到255（100%）设置LED像素 */
+    //         for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
+    //             // 为每个LED设置颜色，这里设置为（0, 150, 255），代表蓝色调的颜色
+    //             ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255));
+    //         }
+    //         /* 刷新灯带以发送数据 */
+    //         ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 将设置的颜色数据发送到LED灯带
+    //         ESP_LOGI(TAG, "LED开！"); // 记录日志，表示LED灯开启
+    //     } else {
+    //         /* 设置所有LED为关闭状态，以清除所有像素 */
+    //         ESP_ERROR_CHECK(led_strip_clear(led_strip)); // 清除LED灯带上的所有像素（关闭LED灯）
+    //         ESP_LOGI(TAG, "LED关！"); // 记录日志，表示LED灯关闭
+    //     }
 
-        //led_on_off = !led_on_off; // 切换LED灯的状态，如果取消这行注释，LED灯将交替开关
-        vTaskDelay(pdMS_TO_TICKS(500)); // 延时500毫秒
-    }
+    //     //led_on_off = !led_on_off; // 切换LED灯的状态，如果取消这行注释，LED灯将交替开关
+    //     vTaskDelay(pdMS_TO_TICKS(500)); // 延时500毫秒
+    // }
 
 //单色爆闪
-//    while (1) {
-//        if (led_on_off) {
-//            // 开启所有LED
-//            for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
-//                ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255)); // 设置为蓝色
-//            }
-//            ESP_ERROR_CHECK(led_strip_refresh(led_strip));
-//            ESP_LOGI(TAG, "LED开！");
-//        } else {
-//            // 关闭所有LED
-//            ESP_ERROR_CHECK(led_strip_clear(led_strip));
-//            ESP_LOGI(TAG, "LED关！");
-//        }
-//
-//        led_on_off = !led_on_off; // 切换LED灯的状态
-//        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时缩短为100毫秒
-//    }
+   while (1) {
+       if (led_on_off) {
+           // 开启所有LED
+           for (int i = 0; i < LED_STRIP_LED_NUMBERS; i++) {
+               ESP_ERROR_CHECK(led_strip_set_pixel(led_strip, i, 0, 150, 255)); // 设置为蓝色
+           }
+           ESP_ERROR_CHECK(led_strip_refresh(led_strip));
+           ESP_LOGI(TAG, "LED开！");
+       } else {
+           // 关闭所有LED
+           ESP_ERROR_CHECK(led_strip_clear(led_strip));
+           ESP_LOGI(TAG, "LED关！");
+       }
+
+       led_on_off = !led_on_off; // 切换LED灯的状态
+       vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时缩短为100毫秒
+   }
 
 //多色爆闪
 //    while (1) {
@@ -102,7 +102,7 @@ void app_main(void)
 //        }
 //        ESP_ERROR_CHECK(led_strip_refresh(led_strip)); // 刷新灯带以发送数据
 //        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时100毫秒
-//
+
 //        // 设置所有LED为关闭状态，以清除所有像素
 //        ESP_ERROR_CHECK(led_strip_clear(led_strip));
 //        vTaskDelay(pdMS_TO_TICKS(30)); // 爆闪模式下的延时100毫秒

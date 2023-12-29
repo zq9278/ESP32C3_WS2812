@@ -1,2 +1,3 @@
-/cmake-build-debug/
-/dependencies.lock
+cmake-build-debug/
+dependencies.lock
+build/
