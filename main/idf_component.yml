@@ -1,4 +1,0 @@
-## IDF Component Manager Manifest File
-#dependencies:
-#  espressif/led_strip:
-#    version: '^2'
