@@ -4,5 +4,10 @@
     "idf.flashType": "UART",
     "idf.openOcdConfigs": [
         "board/esp32c3-bridge.cfg"
-    ]
+    ],
+    "files.associations": {
+        "stdio.h": "c",
+        "freertos.h": "c",
+        "led_strip.h": "c"
+    }
 }
